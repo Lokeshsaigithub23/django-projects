@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        {% if submitted %}
+        <h1>hello {{name}}thanks for providing feedback ,it is very help for us to provide better service</h1>
+        {% else %}
+        <h1>student feedback</h1>
+        <form method="post">
+            {{form.as_p}}
+            {% csrf_token %}
+            <input type="submit" value="SubmitFeedBack">
+        </form>
+        {% endif %}
+    </div>
+</body>
+</html>
